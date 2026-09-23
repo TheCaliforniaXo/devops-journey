@@ -1,0 +1,60 @@
+california@DESKTOP-6V49ASP:~$ sudo apt update && sudo apt upgrade -y
+[sudo: authenticate] Password:
+Hit:1 http://archive.ubuntu.com/ubuntu resolute InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu resolute-updates InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu resolute-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu resolute-security InRelease
+All packages are up to date.
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+california@DESKTOP-6V49ASP:~$ sudo apt install -y git curl wget vim htop tree jq unzip ca-certificates gnupg lsb-release software-properties-common
+git is already the newest version (1:2.53.0-1ubuntu1).
+curl is already the newest version (8.18.0-1ubuntu2.5).
+wget is already the newest version (1.25.0-2ubuntu4.4).
+vim is already the newest version (2:9.1.2141-1ubuntu4.9).
+htop is already the newest version (3.4.1-5build2).
+tree is already the newest version (2.3.1-1).
+jq is already the newest version (1.8.1-4ubuntu2).
+unzip is already the newest version (6.0-29ubuntu1).
+ca-certificates is already the newest version (20260601~26.04.1).
+gnupg is already the newest version (2.4.8-4ubuntu3.1).
+lsb-release is already the newest version (12.1-2build1).
+software-properties-common is already the newest version (0.120.1).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+california@DESKTOP-6V49ASP:~$ git config --global user.name "TheCalifornia"
+california@DESKTOP-6V49ASP:~$ git config --global user.email "californiarom@gmail.com"
+california@DESKTOP-6V49ASP:~$ git config --global init.defaultBranch main
+california@DESKTOP-6V49ASP:~$ ssh-keygen -t ed25519 -C "californiarom@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/california/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/california/.ssh/id_ed25519
+Your public key has been saved in /home/california/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:fvcpzxvkRz5gdVstST3TkjsA5X0LUCGiUi55Ktg4EdA californiarom@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|oo     . ..=oooo.|
+|  E   + . ..+oo++|
+| .   + +    .o++B|
+|  =   =       =o=|
+| + o .  S    o.+.|
+|  . .  .    .o.o |
+|        . . . o.o|
+|         . ..o +.|
+|             o*. |
++----[SHA256]-----+
+california@DESKTOP-6V49ASP:~$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILjn4D6tVBfdqO26ofE1fPWPG7/TARqfwM7DvU04JZoe californiarom@gmail.com
+california@DESKTOP-6V49ASP:~$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Please type 'yes', 'no' or the fingerprint:
+Host key verification failed.
+california@DESKTOP-6V49ASP:~$ ssh-keyscan github.com >> ~/.ssh/known_hosts
+california@DESKTOP-6V49ASP:~$ ssh -T git@github.com
+Hi TheCaliforniaXo! You've successfully authenticated, but GitHub does not provide shell access.
